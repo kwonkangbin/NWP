@@ -9,123 +9,143 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        fieldset {
-            margin-top: 40px;
-        }
-
-        .title {
-            display: block;
-            width: 220px;
-            margin-top: 25px;
-            margin-left: 147px;
-            font-size: 30px;
-        }
-
-        label {
-            position: relative;
-            top: 10px;
-            right: 10px;
-            left: 10px;
-            bottom: 10px;
-        }
-
-        legend {
+        fieldset{
             background-color: greenyellow;
-            border-radius: 15px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            margin: 1rem auto;
             color: black;
-            padding: 6px 8px;
         }
-        b{
-            font-size: 20px;
+        legend{
+            border-radius: 10px;
+            padding: 1.5% 2% 1.5% 2%;
+            border: none;
+            background-color: beige;
         }
-        .l1 {
-            margin-left: 1;
+        .time{
+            height: 21%;
+            position: relative;
         }
-        input.ok{
-            width: 50px;
-            height: 30px;
-            margin: 18px;
+        .chadan{
+            height: 16%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        input{
-            width: 90px;
-            height: 30px;
-            margin: 18px;
-        }
-        label[for="odk"]{
-            margin-left: 45px;
+        .ai{
+            height: 19%;
+            position: relative;
         }
         .bu{
-            width: 170px;
-            height: 80px;
-            border-radius: 30px;
-            font-size: 35px;
-            margin: 35px 100px 100px 114px;
+            border-radius: 10px;
+            position: absolute;
+            top: 85.5%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 30%;
+            height: 7%;
         }
-        .ON{
-            margin: 30px 20px 30px 20px;
-            width: 70px;
-            height: 35px;
-            font-size: 20px;
+        #data_hh,#data_hh2,#data_mm,#data_mm2{
+            width: 25%;
+            background-color: beige;
+            color: black;
+            border: none;
+            height: 18%;
+        }
+        label.off{
+            position: absolute;
+            left: 17%;
+            top: 30%;
+            width: 90%;
+        }
+        label.on{
+            position: absolute;
+            left: 17%;
+            top: 60%;
+            width: 90%;
+        }
+        label{
+            font-size: 0.85rem;
+        }
+        .ONs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 25%;
+            height: 30%;
+            position: absolute;
+            top: 50%;
+            left: 22%;
+        }
+        .OFFs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 25%;
+            height: 30%;
+            position: absolute;
+            top: 50%;
+            left: 53%;
         }
         p{
-            font-size: 25px;
+            padding: 4%;
         }
     </style>
 </head>
 
 <body>
-    <span class="title">콘센트 1</span>
+    <span class="title">세부설정</span>
     <form>
-        <fieldset>
+        <fieldset class="time">
             <legend class="l1"><b>시간 설정</b></legend>
-            <label for="odk">끄는 시간
-                <input class="ok" type="text"> :
-                <input class="ok" type="text">
+            <label for="odk" class="off">끄는 시간
+                <input id='data_hh' class="ok" type="text"> <b>:</b>
+                <input id='data_mm' class="ok" type="text">
             </label>
             <br>
-            <label for="odk">키는 시간
-                <input class="ok" type="text"> :
-                <input class="ok" type="text">
+            <label for="odk" class="on">키는 시간
+                <input id='data_hh2' class="ok" type="text"> <b>:</b>
+                <input id='data_mm2' class="ok" type="text">
             </label>
         </fieldset>
     </form>
     <form>
-        <fieldset>
+        <fieldset class="chadan">
             <legend class="l2"><b>자동차단 전력량 설정 on/off</b></legend>
             <label for="odk">차단할 전력량<input type="text"> W</label>
         </fieldset>
     </form>
     <form>
-        <fieldset>
+        <fieldset class="ai">
             <legend class="l3"><b>AI 자동모드</b></legend>
             <p>NWP 앱이 추천하는 전력량을 기준으로 전력이 자동으로 차단됩니다.</p>
-            <a href=""><button class="ON">ON</button></a>
-            <a href=""><button class="ON">OFF</button></a>
+            <a href=""><button class="ONs">ON</button></a>
+            <a href=""><button class="OFFs">OFF</button></a>
         </fieldset>
     </form>
-    <a href=""><button class="bu">완료</button></a>
-    <div class="bottom_menu">
-        <div onclick="location.href ='./index.html'">
-            <span class="material-symbols-outlined a">
-                home
-            </span>
+    <button class="bu" onclick="timego()">완료</button>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
         </div>
-        <div onclick="location.href ='./plus.html'">
-            <span class="material-symbols-outlined a">
-                add
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
         </div>
-        <div onclick="location.href ='./report.html'">
-            <span class="material-symbols-outlined a">
-                compost
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
         </div>
-        <div onclick="location.href ='./setting_two.html'">
-            <span class="material-symbols-outlined a">
-                settings
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
         </div>
     </div>
+    <script>
+        function timego() {
+            let hh = document.getElementById('data_hh');
+            let mm = document.getElementById('data_mm');
+            let hh2 = document.getElementById('data_hh2');
+            let mm2 = document.getElementById('data_mm2');
+            location.href = 'http://192.168.0.21/save?hh=' + hh.value + '&mm=' + mm.value + '&hh2=' + hh2.value + '&mm2=' + mm2.value;
+        }
+    </script>
 </body>
 
 </html>
