@@ -4,95 +4,179 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        .title {
-            display: block;
-            width: 240px;
-            margin-top: 25px;
-            margin-left: 83px;
-            font-size: 30px;
+        .ko {
+            font-size: 2.2rem;
+            position: absolute;
+            left: 84%;
+            top: 30%;
+        }
+
+        .changname1 {
+            border: 10px black;
+        }
+
+        button.modals {
+            width: 30%;
+            height: 25px;
+            position: absolute;
+            left: 36.5%;
+            top: 50%;
+            border-radius: 10px;
+            background-color: green;
+        }
+
+        input.modal {
+            width: 75%;
+            height: 25px;
+            position: absolute;
+            left: 13.5%;
+            top: 25%;
+            border: 0;
+            border-radius: 10px;
+            background-color: green;
+            height: 10%;
+            font-size: 1.5em;
+        }
+
+        .commit {
+            width: 30%;
+            height: 25px;
+            position: absolute;
+            left: 36.5%;
+            top: 65%;
+            border-radius: 10px;
+            background-color: green;
         }
     </style>
 </head>
 
 <body>
-    <section>
-        <div>
-            <span class="title">우리집 전력 관리</span>
+    <div>
+        <span class="title">우리집 전력 관리</span>
+    </div>
+    <div class="tab">
+        <h2 id="me1" onclick="changname1()" class="k">멀티탭1</h2>
+        <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
+        <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div class="tab">
+        <h2 id="me2" onclick="changname2()" class="k">멀티탭2</h2>
+        <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
+        <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div class="tab">
+        <h2 id="me3" onclick="changname3()" class="k">멀티탭3</h2>
+        <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
+        <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
         </div>
-            <div onclick="location.href ='./one.html'">
-                <ul>
-                    <li><span id="me1" onclick="changname1()" class="k">멀티탭1</span></li>
-                    <li class="ON2"><a href=""><button class="k">ON</button></a></li>
-                    <li class="OFF2"><a href=""><button class="k">OFF</button></a></li>
-                </ul>
-            </div>
-        <div>
-            <ul>
-                <li><span id="me2" onclick="changname2()" class="k">멀티탭2</span></li>
-                <li class="ON3"><a href=""><button class="k">ON</button></a></li>
-                <li class="OFF3"><a href="http://192.168.172.101/LED2=OFF"><button class="k">OFF</button></a></li>
-            </ul>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
         </div>
-        <div>
-            <ul>
-                <li><span id="me3" onclick="changname3()" class="k">멀티탭3</span></li>
-                <li class="ON4"><a href="http://192.168.172.101/LED3=ON"><button class="k">ON</button></a></li>
-                <li class="OFF4"><a href="http://192.168.172.101/LED3=OFF"><button class="k">OFF</button></a></li>
-            </ul>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
         </div>
-    </section>
-    <div class="bottom_menu">
-        <div onclick="location.href ='./index.html'">
-            <span class="material-symbols-outlined a">
-                home
-            </span>
-        </div>
-        <div onclick="location.href ='./plus.html'">
-            <span class="material-symbols-outlined a">
-                add
-            </span>
-        </div>
-        <div onclick="location.href ='./report.html'">
-            <span class="material-symbols-outlined a">
-                compost
-            </span>
-        </div>
-        <div onclick="location.href ='./setting_two.html'">
-            <span class="material-symbols-outlined a">
-                settings
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
         </div>
     </div>
-    </section>
+    <div class="changname1">
+        <input type="text" id="txt1" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save1()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname2">
+        <input type="text" id="txt2" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save2()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname3">
+        <input type="text" id="txt3" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save3()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <script src="index.js"></script>
     <script>
-        let name1;
-        let name2;
-        let name3;
-        let name4;
-        function setting() {
-            location.href = './setting.html'
+        function init1() {
+            let val = localStorage.getItem("myVal1");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭1';
+            }
+
+            document.getElementById("txt1").value = val;
+            document.getElementById("me1").textContent = val;
         }
-        function changname1() {
-            const $downbtn = document.getElementById('me1');
-            let name = prompt("이름을 정하세요");
-            name1 = name;
-            $downbtn.innerHTML = `${name}`
+
+        function save1() {
+            localStorage.setItem("myVal1", document.getElementById("txt1").value)
+            document.querySelector('.changname1').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt1").value;
+            document.getElementById("me1").textContent = name;
         }
-        function changname2() {
-            const $downbtn = document.getElementById('me2');
-            let name = prompt("이름을 정하세요");
-            $downbtn.innerHTML = `${name}`
+
+        init1();
+
+        function init2() {
+            let val = localStorage.getItem("myVal2");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭2';
+            }
+
+            document.getElementById("txt2").value = val;
+            document.getElementById("me2").textContent = val;
         }
-        function changname3() {
-            const $downbtn = document.getElementById('me3');
-            let name = prompt("이름을 정하세요");
-            $downbtn.innerHTML = `${name}`
+
+        function save2() {
+            localStorage.setItem("myVal2", document.getElementById("txt2").value)
+            document.querySelector('.changname2').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt2").value;
+            document.getElementById("me2").textContent = name;
         }
+
+        init2();
+
+        function init3() {
+            let val = localStorage.getItem("myVal3");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭3';
+            }
+
+            document.getElementById("txt3").value = val;
+            document.getElementById("me3").textContent = val;
+        }
+
+        function save3() {
+            localStorage.setItem("myVal3", document.getElementById("txt3").value)
+            document.querySelector('.changname3').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt3").value;
+            document.getElementById("me3").textContent = name;
+        }
+
+        init3();
+
     </script>
 </body>
 
