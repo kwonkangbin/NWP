@@ -9,68 +9,79 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        fieldset {
-            margin-top: 40px;
-        }
-
-        .title {
-            display: block;
-            width: 220px;
-            margin-top: 25px;
-            margin-left: 147px;
-            font-size: 30px;
-        }
-
-        label {
-            position: relative;
-            top: 10px;
-            right: 10px;
-            left: 10px;
-            bottom: 10px;
-        }
-
-        legend {
+        fieldset{
             background-color: greenyellow;
-            border-radius: 15px;
-            color:black;
-            padding: 6px 8px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            margin: 1rem auto;
+            color: black;
+            position: relative;
         }
-        b{
-          
-            font-size: 20px;
+        legend{
+            border-radius: 10px;
+            padding: 1.5% 2% 1.5% 2%;
+            border: none;
+            background-color: beige;
         }
-        .l1 {
-            margin-left: 1;
-        }
-        input.ok{
-            width: 250px;
-            height: 30px;
-            margin: 18px;
-        }
-        input{
-            width: 90px;
-            height: 30px;
-            margin: 18px;
-        }
-        label[for="odk"]{
-            margin-top: 10;
-            margin-left: 25px;
-        }
-        .bu{
-            width: 170px;
-            height: 80px;
-            border-radius: 30px;
-            font-size: 35px;
-            margin: 35px 100px 100px 114px;
-        }
-        .ON{
-            margin: 30px 20px 30px 20px;
-            width: 70px;
-            height: 35px;
-            font-size: 20px;
+        p.safe{
+            font-size: 1.3em;
+            margin: 2% 2% 1.5% 3%;
         }
         p{
-            font-size: 25px;
+            font-size: 1.55em;
+            line-height: 1.2rem;
+        }
+        .bu{
+            border-radius: 10px;
+            position: absolute;
+            top: 85.5%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 30%;
+            height: 7%;
+        }
+        .noin{
+            width: 85%;
+            height: 30%;
+        }
+        .safe{
+            width: 85%;
+            height: 30%;
+        }
+        .ONs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            top: 65%;
+            left: 22%;
+        }
+        .OFFs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            top: 65%;
+            left: 53%;
+        }
+        p{
+            padding: 4% 4% 4% 7%;
+        }
+        label[for="odk"]{
+            font-size: 0.85rem;
+            position: absolute;
+            left: 17%;
+            top: 40%;
+        }
+        input{
+            width: 85%;
+            color: black;
+            border: none;
+            height: 18%;
+            margin-top: 2px;
         }
     </style>
 </head>
@@ -78,45 +89,37 @@
 <body>
     <span class="title">부가기능</span>
     <form>
-        <fieldset>
-            <legend class="l1"><b>독거인 안심 모드</b></legend>
+        <fieldset class="noin">
+            <legend><b>독거인 안심 모드</b></legend>
             <p>일정 시간 동안 정상적인 전력사용이 감지되지 않을 경우 보호자에게 알림을 보냅니다.</p>
             <label for="odk">보호자 연락처
                 <input class="ok" type="text">
-                <a href=""><button class="ON">ON</button></a>
-                <a href=""><button class="ON">OFF</button></a>
             </label>
+            <a href=""><button class="ONs">ON</button></a>
+            <a href=""><button class="OFFs">OFF</button></a>
         </fieldset>
     </form>
     <form>
-        <fieldset>
-            <legend class="l3"><b>세이프롬 모드</b></legend>
-            <p>지정된 시간 동안 비정상적인 전력 사용이 감지될 경우 관리자에게 알림을 보냅니다.</p>
-            <a href=""><button class="ON">ON</button></a>
-            <a href=""><button class="ON">OFF</button></a>
+        <fieldset class="safe">
+            <legend><b>세이프홈 모드</b></legend>
+            <p class="safe">지정된 시간 동안 비정상적인 전력 사용이 감지될 경우 관리자에게 알림을 보냅니다.</p>
+            <a href=""><button class="ONs">ON</button></a>
+            <a href=""><button class="OFFs">OFF</button></a>
         </fieldset>
     </form>
     <a href=""><button class="bu">완료</button></a>
-    <div class="bottom_menu">
-        <div onclick="location.href ='./index.html'">
-            <span class="material-symbols-outlined a">
-                home
-            </span>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
         </div>
-        <div onclick="location.href ='./plus.html'">
-            <span class="material-symbols-outlined a">
-                add
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
         </div>
-        <div onclick="location.href ='./report.html'">
-            <span class="material-symbols-outlined a">
-                compost
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
         </div>
-        <div onclick="location.href ='./setting_two.html'">
-            <span class="material-symbols-outlined a">
-                settings
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
         </div>
     </div>
 </body>
