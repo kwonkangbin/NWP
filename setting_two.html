@@ -9,66 +9,59 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        b.FAQ{
-            position: absolute;
-            top: 28px;
-            left: 168px;
-        }
         b{
             position: absolute;
-            top: 28px;
-            left: 88px;
-        }
-        .title {
-            display: block;
-            width: 245px;
-            margin-top: 25px;
-            margin-left: 85px;
-            font-size: 35px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: black;
         }
         .al{
-            position: relative;
-            margin-top: 50px;
+            margin-top: 2rem;
             font-size: 30px;
-            width: 400px;
-            height: 100px;
+            width: 85%;
+            height: 15%;
             border-radius: 15px;
             background-color: greenyellow;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .s1{
+            top: 10%;
+        }
+        .s2{
+            top: 30%;
+        }
+        .s3{
+            top: 50%;
         }
     </style>
 </head>
 
 <body>
     <span class="title">NWP 전체 설정</span>
-    <div class="al">
+    <div class="al s1">
         <b class="FAQ">알림</b>
     </div>
-    <div class="al">
+    <div class="al s2">
         <b class="FAQ">FAQ</b>
     </div>
-    <div class="al">
+    <div class="al s3">
         <b>과전력 차단 기능</b>
     </div>
-    <div class="bottom_menu">
-        <div onclick="location.href ='./index.html'">
-            <span class="material-symbols-outlined a">
-                home
-            </span>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
         </div>
-        <div onclick="location.href ='./plus.html'">
-            <span class="material-symbols-outlined a">
-                add
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
         </div>
-        <div onclick="location.href ='./report.html'">
-            <span class="material-symbols-outlined a">
-                compost
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
         </div>
-        <div onclick="location.href ='./setting_two.html'">
-            <span class="material-symbols-outlined a">
-                settings
-            </span>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
         </div>
     </div>
 </body>
