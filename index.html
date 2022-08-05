@@ -16,6 +16,14 @@
             top: 30%;
         }
 
+        .s {
+            font-size: 2.2rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         .changname1 {
             border: 10px black;
         }
@@ -52,6 +60,15 @@
             border-radius: 10px;
             background-color: green;
         }
+
+        #me1 {
+            font-size: 1.2rem;
+            position: absolute;
+            left: 6%;
+            top: 50%;
+            transform: translate(0%, -150%);
+            color: black;
+        }
     </style>
 </head>
 
@@ -61,6 +78,7 @@
     </div>
     <div class="tab">
         <h2 id="me1" onclick="changname1()" class="k">멀티탭1</h2>
+        <h4>off</h4>
         <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
         <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
         <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
@@ -69,6 +87,7 @@
     </div>
     <div class="tab">
         <h2 id="me2" onclick="changname2()" class="k">멀티탭2</h2>
+        <h4>off</h4>
         <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
         <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
         <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
@@ -77,10 +96,16 @@
     </div>
     <div class="tab">
         <h2 id="me3" onclick="changname3()" class="k">멀티탭3</h2>
+        <h4>off</h4>
         <button href="http://192.168.0.21/LED2=ON" class="k ON3">ON</button>
         <button class="k OFF3" href="http://192.168.0.21/LED2=OFF">OFF</button>
         <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
             settings
+        </span>
+    </div>
+    <div class="tab">
+        <span class="material-symbols-outlined s">
+            add
         </span>
     </div>
     <div id="head-menu" role="navigation" style="height: 50px;">
@@ -170,7 +195,6 @@
         function save3() {
             localStorage.setItem("myVal3", document.getElementById("txt3").value)
             document.querySelector('.changname3').style.display = 'none';
-            //self.location.reload(true);
             let name = document.getElementById("txt3").value;
             document.getElementById("me3").textContent = name;
         }
