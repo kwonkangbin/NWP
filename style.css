@@ -81,19 +81,27 @@ body {
     margin: 6% auto;
 }
 .yu{
-    margin-top: 17.5%;
+    margin-top: 18%;
 }
 
-#me1,
 #me2,
 #me3,
 #me4,
 #me5,
-#me6 {
+#me6,
+#me7 {
     font-size: 1.2rem;
     position: absolute;
     left: 6%;
-    top: 42px;
+    top: 50%;
+    transform: translate(0%,-150%);
+    color: black;
+}
+h4{
+    font-size: 0.85rem;
+    position: absolute;
+    left: 12.5%;
+    top: 55%;
     color: black;
 }
 
