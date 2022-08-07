@@ -141,7 +141,8 @@ button.OFF3 {
 .changname3,
 .changname4,
 .changname5,
-.changname6 {
+.changname6,
+.changname7 {
     display: none;
     width: 85%;
     height: 45%;
