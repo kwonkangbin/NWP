@@ -16,6 +16,9 @@ function changname5() {
 function changname6() {
     document.querySelector('.changname6').style.display = 'block';
 }
+function changname7() {
+    document.querySelector('.changname7').style.display = 'block';
+}
 function back() {
     document.querySelector('.changname1').style.display = 'none';
     document.querySelector('.changname2').style.display = 'none';
@@ -23,6 +26,7 @@ function back() {
     document.querySelector('.changname4').style.display = 'none';
     document.querySelector('.changname5').style.display = 'none';
     document.querySelector('.changname6').style.display = 'none';
+    document.querySelector('.changname7').style.display = 'none';
 }
 
 
@@ -155,8 +159,32 @@ function save6() {
 
 init6();
 
+function init7() {
+    let val = localStorage.getItem("myVal7");
+
+    if (val == null || val == undefined) {
+        val = '콘센트7';
+    }
+
+    document.getElementById("txt7").value = val;
+    document.getElementById("me7").textContent = val;
+}
+
+function save7() {
+    localStorage.setItem("myVal7", document.getElementById("txt7").value)
+    document.querySelector('.changname7').style.display = 'none';
+    //self.location.reload(true);
+    let name = document.getElementById("txt7").value;
+    document.getElementById("me7").textContent = name;
+}
+
+init7();
+
+
+
 function back2() {
     document.querySelector('.changname4').style.display = 'none';
     document.querySelector('.changname5').style.display = 'none';
     document.querySelector('.changname6').style.display = 'none';
+    document.querySelector('.changname7').style.display = 'none';
 }
