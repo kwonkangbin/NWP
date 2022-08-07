@@ -122,7 +122,86 @@
             settings
         </div>
     </div>
+    <div class="changname1">
+        <input type="text" id="txt1" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save1()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname2">
+        <input type="text" id="txt2" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save2()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname3">
+        <input type="text" id="txt3" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save3()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
     <script src="index.js"></script>
+    <script>
+        function init1() {
+            let val = localStorage.getItem("myVal1");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭1';
+            }
+
+            document.getElementById("txt1").value = val;
+            document.getElementById("me1").textContent = val;
+        }
+
+        function save1() {
+            localStorage.setItem("myVal1", document.getElementById("txt1").value)
+            document.querySelector('.changname1').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt1").value;
+            document.getElementById("me1").textContent = name;
+        }
+
+        init1();
+
+        function init2() {
+            let val = localStorage.getItem("myVal2");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭2';
+            }
+
+            document.getElementById("txt2").value = val;
+            document.getElementById("me2").textContent = val;
+        }
+
+        function save2() {
+            localStorage.setItem("myVal2", document.getElementById("txt2").value)
+            document.querySelector('.changname2').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt2").value;
+            document.getElementById("me2").textContent = name;
+        }
+
+        init2();
+
+        function init3() {
+            let val = localStorage.getItem("myVal3");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭3';
+            }
+
+            document.getElementById("txt3").value = val;
+            document.getElementById("me3").textContent = val;
+        }
+
+        function save3() {
+            localStorage.setItem("myVal3", document.getElementById("txt3").value)
+            document.querySelector('.changname3').style.display = 'none';
+            let name = document.getElementById("txt3").value;
+            document.getElementById("me3").textContent = name;
+        }
+
+        init3();
+
+    </script>
 </body>
 
 </html>
