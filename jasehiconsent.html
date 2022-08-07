@@ -96,6 +96,9 @@
             font-size: 1.4rem;
             color: black;
         }
+        .sals{
+            margin-bottom: 10%;
+        }
     </style>
 </head>
 
@@ -118,10 +121,25 @@
         <h4>off</h4>
         <h3>현재전력사용량</h3>
     </div>
-    <div class="tab t">
+    <div class="tab t sals">
         <h2 id="me7" class="k">콘센트4</h2>
         <h4>off</h4>
         <h3>현재전력사용량</h3>
+    </div>
+    <div class="changname4">
+        <input type="text" id="txt4" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save4()">확인</button>
+        <button class="commit" onclick="back2()">취소</button>
+    </div>
+    <div class="changname5">
+        <input type="text" id="txt5" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save5()">확인</button>
+        <button class="commit" onclick="back2()">취소</button>
+    </div>
+    <div class="changname6">
+        <input type="text" id="txt6" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save6()">확인</button>
+        <button class="commit" onclick="back2()">취소</button>
     </div>
     <div id="head-menu" role="navigation" style="height: 50px;">
         <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
@@ -138,6 +156,76 @@
         </div>
     </div>
     <script src="index.js"></script>
+    <script>
+        function init4() {
+            let val = localStorage.getItem("myVal4");
+
+            if (val == null || val == undefined) {
+                val = '콘센트4';
+            }
+
+            document.getElementById("txt4").value = val;
+            document.getElementById("me4").textContent = val;
+        }
+
+        function save4() {
+            localStorage.setItem("myVal4", document.getElementById("txt4").value)
+            document.querySelector('.changname4').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt4").value;
+            document.getElementById("me4").textContent = name;
+        }
+
+        init4();
+
+        function init5() {
+            let val = localStorage.getItem("myVal5");
+
+            if (val == null || val == undefined) {
+                val = '콘센트5';
+            }
+
+            document.getElementById("txt5").value = val;
+            document.getElementById("me5").textContent = val;
+        }
+
+        function save5() {
+            localStorage.setItem("myVal5", document.getElementById("txt5").value)
+            document.querySelector('.changname5').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt5").value;
+            document.getElementById("me5").textContent = name;
+        }
+
+        init5();
+
+        function init6() {
+            let val = localStorage.getItem("myVal6");
+
+            if (val == null || val == undefined) {
+                val = '콘센트6';
+            }
+
+            document.getElementById("txt6").value = val;
+            document.getElementById("me6").textContent = val;
+        }
+
+        function save6() {
+            localStorage.setItem("myVal6", document.getElementById("txt6").value)
+            document.querySelector('.changname6').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt6").value;
+            document.getElementById("me6").textContent = name;
+        }
+
+        init6();
+
+        function back2() {
+            document.querySelector('.changname4').style.display = 'none';
+            document.querySelector('.changname5').style.display = 'none';
+            document.querySelector('.changname6').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
