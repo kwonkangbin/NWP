@@ -27,6 +27,7 @@ function back() {
     document.querySelector('.changname5').style.display = 'none';
     document.querySelector('.changname6').style.display = 'none';
     document.querySelector('.changname7').style.display = 'none';
+    document.querySelector('.shere').style.display = 'none';
 }
 
 
